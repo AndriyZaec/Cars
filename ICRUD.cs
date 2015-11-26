@@ -6,7 +6,6 @@ namespace Cars
     {
         void Create();
         List<Car> Read();
-        void Update();
-        void Delete();
+        void Update(List<Car> list);
     }
 }

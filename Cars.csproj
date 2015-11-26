@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adding.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adding.Designer.cs">
-      <DependentUpon>Adding.cs</DependentUpon>
-    </Compile>
     <Compile Include="Car.cs" />
     <Compile Include="FileWorking.cs" />
     <Compile Include="MainForm.cs">
@@ -61,13 +55,20 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ICRUD.cs" />
+    <Compile Include="Searching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Searching.Designer.cs">
+      <DependentUpon>Searching.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Adding.resx">
-      <DependentUpon>Adding.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Validation.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Searching.resx">
+      <DependentUpon>Searching.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,6 +80,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,6 +114,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ico\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\help.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

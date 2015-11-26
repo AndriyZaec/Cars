@@ -12,6 +12,5 @@ namespace Cars
         public string  Color   { get; set; }
         public decimal Price   { get; set; }
         public int     Power   { get; set; }
-        public string  Picture { get; set; }
     }
 }

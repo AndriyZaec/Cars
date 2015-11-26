@@ -1,7 +1,4 @@
-﻿
-
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace Cars
@@ -20,15 +17,12 @@ namespace Cars
             }
         }
 
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Car> Read()
         {
             MainForm mainForm = new MainForm();
-            StreamReader reader = new StreamReader(path);
+
+            using (StreamReader reader = new StreamReader(path))
+            {
                 while (true)
                 {
                     string temp = reader.ReadLine();
@@ -37,15 +31,33 @@ namespace Cars
 
                     string[] split = temp.Split(new char[] { '|' });
 
-                    _cars.Add(new Car() { Model = split[0], Color = split[1], Price = decimal.Parse(split[2]), Power = int.Parse(split[3])});
+                    _cars.Add(new Car() { Model = split[0], Color = split[1], Price = decimal.Parse(split[2]), Power = int.Parse(split[3]) });
+                }
             }
-            reader.Close();
             return _cars;
         }
 
-        public void Update()
+        public void Update(List<Car> list)
         {
-            throw new NotImplementedException();
+            StreamWriter writer = new StreamWriter(path, false);
+
+            foreach(var el in list)
+            {
+                string temp = el.Model + "|" + el.Color + "|" + el.Price + "|" + el.Power;
+
+                writer.WriteLine(temp);
+            }
+
+            writer.Close();
+        }
+
+        public void Adding(string temp)
+        {
+            StreamWriter writer = new StreamWriter(path, true);
+
+            writer.WriteLine(temp);
+
+            writer.Close();
         }
     }
 }
